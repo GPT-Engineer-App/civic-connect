@@ -20,14 +20,16 @@ const Index = () => {
 
   return (
     <Box p={8}>
-      <Flex justify="space-between" align="center" mb={8}>
-        <Heading as="h1" size="xl">
-          Civic Engagement Platform
-        </Heading>
-        <Image src="https://images.unsplash.com/photo-1604420022249-87e637722439?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx2b3RlJTIwaWNvbnxlbnwwfHx8fDE3MTE2NTE3OTl8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Vote" boxSize="50px" />
-      </Flex>
+      <Box bg="blue.500" p={8} color="white">
+        <Flex justify="space-between" align="center" mb={8}>
+          <Heading as="h1" size="xl">
+            Civic Engagement Platform
+          </Heading>
+          <Image src="https://images.unsplash.com/photo-1604420022249-87e637722439?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx2b3RlJTIwaWNvbnxlbnwwfHx8fDE3MTE2NTE3OTl8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Vote" boxSize="50px" />
+        </Flex>
+      </Box>
 
-      <Stack spacing={8}>
+      <Stack spacing={8} bg="white" p={8} borderRadius="md" shadow="md">
         <Box>
           <Heading as="h2" size="lg" mb={4}>
             Voter Registration
@@ -37,7 +39,7 @@ const Index = () => {
           ) : (
             <>
               <Text mb={4}>Register to vote and make your voice heard in the democratic process.</Text>
-              <Button leftIcon={<FaVoteYea />} colorScheme="blue" onClick={handleRegister}>
+              <Button leftIcon={<FaVoteYea />} colorScheme="green" onClick={handleRegister}>
                 Register to Vote
               </Button>
             </>
@@ -82,7 +84,41 @@ const Index = () => {
                 </Link>
               </AccordionPanel>
             </AccordionItem>
+
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    Importance of Civic Engagement
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Text>Discover why civic engagement is crucial for a thriving democracy and how your participation can make a difference in shaping policies and communities.</Text>
+                <Link href="#" color="blue.500">
+                  Read More
+                </Link>
+              </AccordionPanel>
+            </AccordionItem>
           </Accordion>
+        </Box>
+
+        <Box bg="blue.50" p={6} borderRadius="md">
+          <Heading as="h2" size="lg" mb={4}>
+            Get Involved
+          </Heading>
+          <Stack spacing={4}>
+            <Link href="#" color="blue.600">
+              National Voter Registration Day
+            </Link>
+            <Link href="#" color="blue.600">
+              League of Women Voters
+            </Link>
+            <Link href="#" color="blue.600">
+              Rock the Vote
+            </Link>
+          </Stack>
         </Box>
 
         <Box>
@@ -93,7 +129,7 @@ const Index = () => {
           <Stack spacing={4}>
             <Input placeholder="Topic" value={discussionTopic} onChange={(e) => setDiscussionTopic(e.target.value)} />
             <Textarea placeholder="Your comment" value={discussionComment} onChange={(e) => setDiscussionComment(e.target.value)} />
-            <Button leftIcon={<FaComments />} colorScheme="green" onClick={handleDiscussionSubmit}>
+            <Button leftIcon={<FaComments />} colorScheme="blue" onClick={handleDiscussionSubmit}>
               Submit
             </Button>
           </Stack>
